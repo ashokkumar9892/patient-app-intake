@@ -1,0 +1,9 @@
+body {
+    background-color: grey;
+}
+
+.container {
+    background-color: white;
+    min-height: 90vh;
+    margin-top: 5vh;
+}
