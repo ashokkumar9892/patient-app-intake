@@ -1,9 +1,9 @@
 import React from 'react'
 
-const PHQ = ({handleReduceIndex}) => {
+const PHQ = ({handleReduceIndex,register,errors,trigger,handleSubmit}) => {
     const que=["Little interest or pleasure in doing things","Feeling down, depressed or hopeless","Feeling nervous, anxious or on edge","Not being able to stop or control worrying"]
     return (
-        <div className="container" style={{width:"70%"}}>
+        <div className="container" >
             <h2>
             PHQ-2 & GAD
 
@@ -27,14 +27,16 @@ const PHQ = ({handleReduceIndex}) => {
               <>
               <tr>
         <td>{curr}</td>
-        <td><input className="form-check-input" type="radio" name="yes"  value="yes"/></td>
-        <td><input className="form-check-input" type="radio" name="yes"  value="yes"/></td>
-        <td><input className="form-check-input" type="radio" name="yes"  value="yes"/></td>
-        <td><input className="form-check-input" type="radio" name="yes"  value="yes"/></td>
+        <td><input className="form-check-input" type="radio" name={curr}  value="0" {...register(curr)}/></td>
+        <td><input className="form-check-input" type="radio" name={curr}  value="1" {...register(curr)}/></td>
+        <td><input className="form-check-input" type="radio" name={curr}  value="2"{...register(curr)} /></td>
+        <td><input className="form-check-input" type="radio" name={curr}  value="3" {...register(curr)}/></td>
+       
      </tr>
               </>
           )
       })}
+      
     </tbody>
 </table>
 <div className="btn-grp">
